@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>Lcbo | Procura de Produtos</title>
+<meta charset='utf-8' />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container">
+	<form th:action="@{/drinks}" method="post">
+		<div clas="row">
+			<div class="col-xs-offset-3 col-xs-6">
+				<label for="campo"> Digite a URL para cadastrar a bebida: </label>
+			 	<input type="text" name="fields" class="form-control"/>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>

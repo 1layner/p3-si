@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>Lcbo | Procura de Produtos</title>
+<meta charset='utf-8' />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container">
+	<form th:action="@{/busca}" method="post" >
+	<div clas="row">
+		<div class="col-xs-offset-3 col-xs-6">
+			<label for="campo"> Digite aqui o nome do produto: </label>
+			<input type="text" name="fields" class="form-control"/>
+		</div>
+		<div class="row">
+			<div class="col-xs-offset-9 col-xs-3">
+				<input type="submit" value="Procurar" class="btn btn-primary"/>
+			</div>
+		</div>
+	</div>
+	<div class="todos" th:each="produto: ${produto}">	
+			<div class="col-xs-4">
+				<pre class="text-center"><p th:text="${produto.nome}"></p></pre>
+				
+				<img th:src="${produto.imgUrl}" class="img-responsive center-block"/>
+				
+					<h4>Categoria:</h4>
+					<pre><p th:text="${produto.categoria}"></p></pre>
+					
+					<h4>Nome do Produtor:</h4>
+					<pre><p th:text="${produto.nomeProdutor}"></p></pre>
+					
+					<h4>Volume:</h4>
+					<pre><p th:text="${produto.volume}"></p></pre>
+					
+					<h4>Valor:</h4>
+					<pre><p th:text="${produto.precoCentavo}"></p></pre>
+		
+			</div>
+	</div>
+	</form>
+</div>
+</body>
+</html>
